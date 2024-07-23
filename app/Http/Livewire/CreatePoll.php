@@ -29,22 +29,11 @@ class CreatePoll extends Component
     {
         $poll = Poll::create([
             'title' => $this->title
-        ]);
-
-        foreach ($this->options as $option) {
-            if (is_array($option)) {
-                if (isset($option['name']) && is_string($option['name'])) {
-                    $poll->options()->create(['name' => $option['name']]);
-                } else {
-                    throw new \TypeError("Option array must contain a string 'name' key.");
-                }
-            } elseif (is_string($option)) {
-                $poll->options()->create(['name' => $option]);
-            } else {
-                throw new \TypeError("Option name must be a string or an array containing a 'name' key, " . gettype($option) . " given.");
-            }
-        }
-
+        ])->options()->createMany(
+            collect($this->options)
+            ->map(fn ($option) => ['name' => $option])
+            ->all()
+            );
         $this->reset(['title', 'options']);
     }
 
