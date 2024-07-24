@@ -38,41 +38,41 @@ This Laravel Livewire Poll application is built with Laravel 10 and provides a s
 
 Clone the repository:
 
-\`\`\`bash
+```bash
 git clone git@github.com:ivorszaniszlo/livewire-poll-app
-\`\`\`
+```
 
 Navigate to the project directory:
 
-\`\`\`bash
+```bash
 cd livewire-poll
-\`\`\`
+```
 
 Install dependencies:
 
-\`\`\`bash
+```bash
 composer install
 npm install
-\`\`\`
+```
 
 Set up environment variables:
 
-\`\`\`bash
+```bash
 cp .env.example .env
 php artisan key:generate
-\`\`\`
+```
 
 Set up the database and run migrations:
 
-\`\`\`bash
+```bash
 php artisan migrate
-\`\`\`
+```
 
 Serve the application:
 
-\`\`\`bash
+```bash
 php artisan serve
-\`\`\`
+```
 
 ### Livewire Setup
 
@@ -80,13 +80,13 @@ To set up Livewire in your Laravel application, follow these steps:
 
 1. Install Livewire via Composer:
 
-\`\`\`bash
+```bash
 composer require livewire/livewire
-\`\`\`
+```
 
-2. Add Livewire styles and scripts to your Blade layout file (usually \`resources/views/layouts/app.blade.php\`):
+2. Add Livewire styles and scripts to your Blade layout file (usually `resources/views/layouts/app.blade.php`):
 
-\`\`\`html
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -99,35 +99,35 @@ composer require livewire/livewire
     @livewireScripts
 </body>
 </html>
-\`\`\`
+```
 
 3. Create a Livewire component for the poll functionality:
 
-\`\`\`bash
+```bash
 php artisan make:livewire PollComponent
-\`\`\`
+```
 
-4. Implement the poll logic in the \`PollComponent\` class (located in \`app/Http/Livewire/PollComponent.php\`) and the corresponding Blade view file (located in \`resources/views/livewire/poll-component.blade.php\`).
+4. Implement the poll logic in the `PollComponent` class (located in `app/Http/Livewire/PollComponent.php`) and the corresponding Blade view file (located in `resources/views/livewire/poll-component.blade.php`).
 
 5. Use the Livewire component in your Blade templates:
 
-\`\`\`html
+```html
 <livewire:poll-component />
-\`\`\`
+```
 
 ### Docker Setup
 
 Build and run the Docker containers:
 
-\`\`\`bash
+```bash
 docker-compose up --build
-\`\`\`
+```
 
-Access the application at \`http://localhost:8000\`.
+Access the application at `http://localhost:8000`.
 
 ## Documentation
 
-Documentation is available in the \`docs\` directory.
+Documentation is available in the `docs` directory.
 
 ## Status
 
